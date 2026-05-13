@@ -62,6 +62,17 @@ bool HashMap::remove(int id){
 	return false; // id not found
 }
 
+void HashMap::addPokemon(HashMap& map, char **argv){
+	int id = std::stoi(argv[2]);
+	std::string name = argv[3];
+	std::string type1 = argv[4];
+	std::string type2 = "";
+	if (argv[5] != NULL)
+		type2 = argv[5];
+	map.insert(id, {name, type1, type2});
+	std::cout << "Pokemon nr " << id << " has been added to the pokédex.\n";
+}
+
 int HashMap::getSize(){
 	return size;
 }

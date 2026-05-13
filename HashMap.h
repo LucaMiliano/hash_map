@@ -1,6 +1,9 @@
-#include "Pokemon.h"
 
 #pragma once
+
+#include "Pokemon.h"
+#include <string>
+#include <iostream>
 
 struct Node {
 	int key;
@@ -13,7 +16,7 @@ struct Node {
 
 class HashMap {
 	private:
-		static const int NUM_BUCKETS = 16;
+		static const int NUM_BUCKETS = 15;
 		Node* buckets[NUM_BUCKETS];
 		int size; // usefull for rehashing for later versions
 
@@ -23,6 +26,7 @@ class HashMap {
 		Pokemon *lookup(int id);
 		bool remove(int id);
 		int getSize();
+		void addPokemon(HashMap& map, char **argv);
 		~HashMap();
 };
 
